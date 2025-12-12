@@ -1,58 +1,61 @@
-<?php include "header.php"; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Wordweave Tech</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gradient-to-br from-[#f1f5ff] via-[#e5ecff] to-[#dce4ff] text-gray-800">
 
+<?php include "header.php"; ?>
+
 <!-- Hero Section -->
 <section class="py-20 text-center bg-gradient-to-r from-[#0a1a3a] via-[#0d2b5a] to-[#1e3a8a] text-white shadow-lg">
-    <h1 class="text-5xl font-bold">About Wordweave Tech</h1>
-    <p class="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-        Your trusted source for the latest tech news, trends, reviews, and deep-dive analyses.
-    </p>
+    <div class="max-w-5xl mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold">About Wordweave Tech</h1>
+        <p class="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
+            Your trusted source for the latest tech news, trends, reviews, and deep-dive analyses.
+        </p>
+    </div>
 </section>
 
 <!-- Main Content -->
 <main class="max-w-5xl mx-auto px-6 py-16">
 
-    <!-- Section 1 -->
-    <div class="mb-16">
+    <!-- Section 1: Mission -->
+    <section class="mb-16">
         <h2 class="text-3xl font-bold text-[#0a1a3a] mb-4">Our Mission</h2>
         <p class="text-gray-700 text-lg leading-relaxed">
             At Wordweave Tech, our mission is to decode the fast-moving world of technology. 
             From breakthrough innovations to industry-shaping trends, we deliver clear, insightful, 
             and reliable coverage to keep our readers informed and ahead of the curve.
         </p>
-    </div>
+    </section>
 
-    <!-- Section 2 -->
-    <div class="mb-16 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Section 2: What We Cover -->
+    <section class="mb-16 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-bold text-[#0a1a3a] mb-4">What We Cover</h2>
             <p class="text-gray-700 text-lg leading-relaxed">
                 Our platform explores everything shaping the modern tech landscape including 
                 consumer gadgets, AI breakthroughs, cybersecurity, startups, gaming, 
                 software updates, and emerging industries.
-                <br><br>
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed mt-4">
                 We simplify complexity and bring you the stories that matter.
             </p>
         </div>
         <div>
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
-                 class="rounded-2xl shadow-lg">
+                 alt="Technology workspace"
+                 class="rounded-2xl shadow-lg w-full h-auto">
         </div>
-    </div>
+    </section>
 
-    <!-- Section 3 -->
-    <div class="mb-16">
+    <!-- Section 3: Our Approach -->
+    <section class="mb-16">
         <h2 class="text-3xl font-bold text-[#0a1a3a] mb-4">Our Approach</h2>
         <p class="text-gray-700 text-lg leading-relaxed">
             Technology changes fast and so do we.  
@@ -66,30 +69,103 @@
             <li>Interviews with founders and industry leaders</li>
             <li>Clear explanations for complex topics like AI, cloud, and cybersecurity</li>
         </ul>
-    </div>
+    </section>
 
-    <!-- Section 4 – Team Box -->
-    <div class="bg-white border rounded-2xl shadow-xl p-10">
+    <!-- FAQ Section -->
+    <section class="mb-16">
+        <h2 class="text-4xl font-bold text-[#0a1a3a] mb-10 text-center">
+            Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-4">
+
+            <!-- FAQ Item 1 -->
+            <div class="bg-white border border-gray-200 rounded-xl shadow p-6 cursor-pointer faq-item hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-[#0a1a3a] flex justify-between items-center">
+                    What is Wordweave Tech?
+                    <span class="text-2xl font-bold toggle-btn text-blue-600">+</span>
+                </h3>
+                <p class="text-gray-700 mt-3 hidden faq-content">
+                    Wordweave Tech is a platform dedicated to delivering the latest technology news, insights, 
+                    reviews, and trend analyses—crafted for tech enthusiasts, developers, and professionals.
+                </p>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-white border border-gray-200 rounded-xl shadow p-6 cursor-pointer faq-item hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-[#0a1a3a] flex justify-between items-center">
+                    What type of content do you publish?
+                    <span class="text-2xl font-bold toggle-btn text-blue-600">+</span>
+                </h3>
+                <p class="text-gray-700 mt-3 hidden faq-content">
+                    We cover a variety of tech topics including AI advancements, gadgets, cybersecurity, 
+                    software updates, startups, product reviews, gaming, and more.
+                </p>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-white border border-gray-200 rounded-xl shadow p-6 cursor-pointer faq-item hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-[#0a1a3a] flex justify-between items-center">
+                    Can I contribute articles to Wordweave Tech?
+                    <span class="text-2xl font-bold toggle-btn text-blue-600">+</span>
+                </h3>
+                <p class="text-gray-700 mt-3 hidden faq-content">
+                    Yes! Once you create an account and sign in, you can submit your tech articles using our 
+                    easy-to-use writing editor.
+                </p>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-white border border-gray-200 rounded-xl shadow p-6 cursor-pointer faq-item hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-[#0a1a3a] flex justify-between items-center">
+                    Is Wordweave Tech free to use?
+                    <span class="text-2xl font-bold toggle-btn text-blue-600">+</span>
+                </h3>
+                <p class="text-gray-700 mt-3 hidden faq-content">
+                    Absolutely! Reading, writing, and engaging with tech content on Wordweave Tech is 100% free.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 4: Team -->
+    <section class="bg-white border border-gray-200 rounded-2xl shadow-xl p-10">
         <h2 class="text-3xl font-bold text-[#0a1a3a] mb-4 text-center">The Team Behind Wordweave Tech</h2>
         <p class="text-gray-700 text-lg text-center max-w-3xl mx-auto leading-relaxed">
             We are a team of tech journalists, analysts, developers, and creators who share a passion 
             for innovation. Our goal is to deliver accurate, unbiased, and engaging tech content that 
             empowers readers to understand the future as it unfolds.
         </p>
-    </div>
+    </section>
 
 </main>
 
-</body>
+<!-- FAQ Toggle Script -->
+<script>
+    document.querySelectorAll(".faq-item").forEach(item => {
+        item.addEventListener("click", () => {
+            const content = item.querySelector(".faq-content");
+            const btn = item.querySelector(".toggle-btn");
+
+            content.classList.toggle("hidden");
+
+            // Toggle + / -
+            btn.textContent = content.classList.contains("hidden") ? "+" : "-";
+        });
+    });
+</script>
+
+<!-- FOOTER -->
 <footer class="bg-gradient-to-r from-[#0a1a3a] via-[#0d2b5a] to-[#1e3a8a] text-white mt-20 shadow-inner">
 
     <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
 
         <!-- Logo -->
         <div class="text-center md:text-left">
-            <h2 class="text-3xl font-bold bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            <h3 class="text-3xl font-bold bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
                 Wordweave
-            </h2>
+            </h3>
             <p class="text-gray-200 mt-2 text-sm">
                 Create. Inspire. Share your story with the world.
             </p>
@@ -111,4 +187,5 @@
 
 </footer>
 
+</body>
 </html>

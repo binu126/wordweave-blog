@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <!-- NAVBAR -->
 <header class="sticky top-0 z-50 bg-gradient-to-r from-[#0a1a3a] via-[#0d2b5a] to-[#1e3a8a] shadow-lg">
-  
+
     <div class="max-w-7xl mx-auto px-4">
 
         <div class="flex justify-between items-center py-4">

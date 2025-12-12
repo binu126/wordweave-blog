@@ -24,7 +24,9 @@ CREATE TABLE IF NOT EXISTS blog_posts (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     INDEX idx_user_id (user_id),
-    INDEX idx_created_at (created_at)
+    INDEX idx_created_at (created_at),
+    category VARCHAR(100) NOT NULL DEFAULT 'General'; -- new category field;
+
 );
 
 -- Likes table

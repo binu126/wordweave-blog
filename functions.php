@@ -135,4 +135,20 @@ function jsonResponse($data, $status = 200) {
     exit;
 }
 
+/* ============================================================
+   CATEGORY HELPER
+   ============================================================ */
+
+function getCategories() {
+    return [
+        "General",
+        "AI",
+        "Web Development",
+        "Operating Systems",
+        "Security",
+        "Gadgets"
+    ];
+}
+
+
 ?>

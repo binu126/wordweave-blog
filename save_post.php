@@ -6,11 +6,12 @@ $user_id = $_SESSION['user_id'];
 
 $title = trim($_POST['title']);
 $content = trim($_POST['content']);
+$category = isset($_POST['category']) ? trim($_POST['category']) : "";
 $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
 
 // Validate required fields
 if (empty($title) || empty($content)) {
-    setFlash("error", "Title and content cannot be empty.");
+    setFlash("error", "Title, content, and category cannot be empty.");
     redirect("editor.php" . ($id ? "?id=$id" : ""));
 }
 
@@ -33,17 +34,23 @@ if ($id > 0) {
     $newImage = uploadImage($_FILES['image']);
 
     if ($newImage) {
-        // delete old file if exists
+
+        // Delete old image
         if (!empty($post['image']) && file_exists("uploads/" . $post['image'])) {
             unlink("uploads/" . $post['image']);
         }
 
-        $stmt = $conn->prepare("UPDATE blog_posts SET title=?, content=?, image=?, updated_at=NOW() WHERE id=?");
-        $stmt->bind_param("sssi", $title, $content, $newImage, $id);
+        $stmt = $conn->prepare("UPDATE blog_posts 
+            SET title=?, content=?, category=?, image=?, updated_at=NOW() 
+            WHERE id=?");
+        $stmt->bind_param("ssssi", $title, $content, $category, $newImage, $id);
+
     } else {
-        // no new image
-        $stmt = $conn->prepare("UPDATE blog_posts SET title=?, content=?, updated_at=NOW() WHERE id=?");
-        $stmt->bind_param("ssi", $title, $content, $id);
+
+        $stmt = $conn->prepare("UPDATE blog_posts 
+            SET title=?, content=?, category=?, updated_at=NOW() 
+            WHERE id=?");
+        $stmt->bind_param("sssi", $title, $content, $category, $id);
     }
 
     $stmt->execute();
@@ -56,12 +63,13 @@ if ($id > 0) {
 // ===============================
 $newImage = uploadImage($_FILES['image']);
 
-$stmt = $conn->prepare("INSERT INTO blog_posts (user_id, title, content, image) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("isss", $user_id, $title, $content, $newImage);
+$stmt = $conn->prepare("INSERT INTO blog_posts (user_id, title, content, category, image) 
+                        VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("issss", $user_id, $title, $content, $category, $newImage);
 $stmt->execute();
 
 $newId = $conn->insert_id;
 
-// redirect to new post
+// Redirect to new post
 redirect("view.php?id=$newId");
 exit;
